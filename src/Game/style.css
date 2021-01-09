@@ -1,0 +1,17 @@
+#mainPane {
+    -fx-background-image: url("../Image/GameStart.png");
+    -fx-background-size:cover;
+
+}
+#listPane {
+    -fx-background-image: url("../Image/MusicList.png");
+    -fx-background-size:cover;
+    -fx-background-repeat: no-repeat;
+
+}
+
+#playPane {
+    -fx-background-image: url("../Image/playPage.png");
+    -fx-background-size:cover;
+
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="playPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../Game/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.playController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="250.0" stroke="#328bc2a7" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="350.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="450.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="550.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="750.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="850.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="950.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0f0ff4d" height="50.0" layoutY="580.0" stroke="#b50c0c" strokeType="INSIDE" strokeWidth="3.0" width="1280.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2d6da6d6" height="5.0" layoutY="650.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
+      <Text fx:id="musicInfo" fill="WHITE" layoutX="30.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0" text="title - Singer">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Text>
+      <Label fx:id="s" alignment="CENTER" layoutX="250.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="S" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="d" alignment="CENTER" layoutX="350.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="D" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="f" alignment="CENTER" layoutX="450.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="F" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="space" alignment="CENTER" layoutX="550.0" layoutY="580.0" prefHeight="50.0" prefWidth="200.0" text="SPACE" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="j" alignment="CENTER" layoutX="750.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="J" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="k" alignment="CENTER" layoutX="850.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="K" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="l" alignment="CENTER" layoutX="950.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="L" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
