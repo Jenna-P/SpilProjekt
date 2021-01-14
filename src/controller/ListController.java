@@ -4,10 +4,21 @@ import Game.Music;
 import Game.Track;
 import javafx.event.ActionEvent;
 import Game.Main;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ListController {
@@ -16,26 +27,67 @@ public class ListController {
     Label musicTitle, artist, timePeriod;
     @FXML
     Text text;
-
+    @FXML
+    Button play;
 
     private Music selectedMusic;
+    private Music gameMusic;
     private int nowSelected = 9999;
     private int songsAdded = 0;
+
 
     ArrayList<Track> trackList = new ArrayList<Track>();
 
 
+
     public void playBtnHandle(ActionEvent event) {
-        Main main = new Main();
-        main.openPlayPage(event);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../UI/play.fxml"));
+            Parent root2 = loader.load();
+            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+            window.setScene(new Scene(root2));
+            window.show();
+
+            PlayController controller = loader.getController();
+            controller.setMusicInfo(musicTitle.getText(), artist.getText(), timePeriod.getText());
+            controller.keyPressed();
+            controller.keyReleased();
+            //controller.setNote();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        onMusic();
+
+
+      /*  try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../UI/play.fxml"));
+            Parent root2 = loader.load();
+
+            PlayController controller = loader.getController();
+            controller.setMusicInfo(musicTitle.getText(), artist.getText(), timePeriod.getText());
+            play.getScene().setRoot(root2);
+            controller.keyPressed();
+            controller.keyReleased();
+            //controller.setNote();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+*/
     }
 
 
     public void selectTrack(int nowSelected) {
         if (songsAdded == 0) {
-        trackList.add(new Track("Energy", "Bensound", "90's", "energy.mp3", "energy.mp3"));
-        trackList.add(new Track("Funkyelement", "Bensound", "00's", "funkyelement.mp3", "funkyelement.mp3"));
-        trackList.add(new Track("Spotlight", "Deflo & Liam Tylor", "10's", "Spotlight.mp3","Spotlight.mp3"));
+        trackList.add(new Track("Energy", "Bensound", "90's", "energyList.mp3"));
+        trackList.add(new Track("Smile", "Joakim Karud", "00's", "smileList.mp3"));
+        trackList.add(new Track("Spotlight", "Deflo & Liam Tylor", "10's", "SpotlightList.mp3"));
         songsAdded = 1;
         }
 
@@ -87,6 +139,28 @@ public class ListController {
             System.out.println("Right 3");
         }
     }
+
+    public void onMusic() {
+        if (musicTitle.getText().equals("Energy")) {
+            selectedMusic.close();
+            gameMusic = new Music("energy.mp3", false);
+            gameMusic.start();
+
+
+        } else if (musicTitle.getText().equals("Smile")) {
+            selectedMusic.close();
+            gameMusic = new Music("smile.mp3", false);
+            gameMusic.start();
+        } else if (musicTitle.getText().equals("Spotlight")) {
+            selectedMusic.close();
+            gameMusic = new Music("Spotlight.mp3", false);
+            gameMusic.start();
+
+        }
+
+    }
+
+
 
 
 

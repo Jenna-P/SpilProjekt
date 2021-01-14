@@ -6,15 +6,15 @@ public class Track {
     private String artistName;
     private String timePeriod;
     private String startMusic;  // in MusiList when its selected
-    private String gameMusic;  //when game start
+    // private String gameMusic;  //when game start
 
 
-    public Track(String title, String artistName, String timePeriod, String startMusic, String gameMusic) {
+    public Track(String title, String artistName, String timePeriod, String startMusic) {
         this.title = title;
         this.artistName = artistName;
         this.timePeriod = timePeriod;
         this.startMusic = startMusic;
-        this.gameMusic = gameMusic;
+        // this.gameMusic = gameMusic;
 
     }
 
@@ -50,11 +50,5 @@ public class Track {
         this.startMusic = startMusic;
     }
 
-    public String getGameMusic() {
-        return gameMusic;
-    }
 
-    public void setGameMusic(String gameMusic) {
-        this.gameMusic = gameMusic;
-    }
 }

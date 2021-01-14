@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="listPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../Game/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListController">
+   <children>
+      <Button fx:id="playLeft" layoutX="543.0" layoutY="201.0" mnemonicParsing="false" onAction="#leftBtnHandle" prefWidth="45.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="playRight" layoutX="723.0" layoutY="201.0" mnemonicParsing="false" onAction="#rightBtnHandle" prefWidth="45.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="play" layoutX="627.0" layoutY="184.0" mnemonicParsing="false" onAction="#playBtnHandle" prefHeight="57.0" prefWidth="57.0" style="-fx-background-color: transparent;" />
+      <Label fx:id="musicTitle" contentDisplay="CENTER" layoutX="465.0" layoutY="265.0" prefHeight="57.0" prefWidth="290.0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Phosphate Inline" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="artist" layoutX="608.0" layoutY="360.0" prefHeight="57.0" prefWidth="290.0" textFill="#77a7bf">
+         <font>
+            <Font name="Phosphate Inline" size="40.0" />
+         </font>
+      </Label>
+      <Label fx:id="timePeriod" alignment="CENTER" layoutX="823.0" layoutY="241.0" prefHeight="35.0" prefWidth="35.0" textFill="#fffefe">
+         <font>
+            <Font name="Phosphate Inline" size="18.0" />
+         </font>
+      </Label>
+      <Text fx:id="text" fill="#fffdfd" layoutX="515.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Music">
+         <font>
+            <Font name="Phosphate Inline" size="50.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
