@@ -51,9 +51,10 @@ public class ListController {
 
             PlayController controller = loader.getController();
             controller.setMusicInfo(musicTitle.getText(), artist.getText(), timePeriod.getText());
-            //controller.keyPressed();
-            //controller.keyReleased();
-            //controller.setNote();
+            controller.keyPressed();
+            controller.keyReleased();
+            controller.judge();
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -71,7 +72,7 @@ public class ListController {
             play.getScene().setRoot(root2);
             controller.keyPressed();
             controller.keyReleased();
-            //controller.setNote();
+            controller.setNote();
 
         } catch (IOException e) {
             e.printStackTrace();
