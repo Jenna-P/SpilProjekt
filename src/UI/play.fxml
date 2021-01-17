@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="playPane" fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../Game/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="250.0" stroke="#328bc2a7" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="350.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="450.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="550.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="750.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="850.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="950.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e0f0ff4d" height="50.0" layoutY="580.0" stroke="#b50c0c" strokeType="INSIDE" strokeWidth="3.0" width="1280.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2d6da6d6" height="5.0" layoutY="650.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
+      <Text fx:id="playMusicTitle" fill="WHITE" layoutX="27.0" layoutY="698.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="80.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="singer" fill="WHITE" layoutX="125.0" layoutY="698.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="166.29296875">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="s" alignment="CENTER" layoutX="250.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="S" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="d" alignment="CENTER" layoutX="350.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="D" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="f" alignment="CENTER" layoutX="450.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="F" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="space" alignment="CENTER" layoutX="550.0" layoutY="580.0" prefHeight="50.0" prefWidth="200.0" text="SPACE" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="j" alignment="CENTER" layoutX="750.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="J" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="k" alignment="CENTER" layoutX="850.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="K" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="l" alignment="CENTER" layoutX="950.0" layoutY="580.0" prefHeight="50.0" prefWidth="100.0" text="L" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="period" layoutX="1213.0" layoutY="668.0" prefHeight="35.0" prefWidth="35.0" textFill="WHITE">
+         <font>
+            <Font name="Phosphate Inline" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="noteS" arcHeight="5.0" arcWidth="5.0" fill="#46afe0e4" height="50.0" layoutX="250.0" stroke="#4d779000" strokeType="INSIDE" width="100.0" />
+      <Rectangle fx:id="noteD" arcHeight="5.0" arcWidth="5.0" fill="#46afe0e4" height="50.0" layoutX="350.0" stroke="#4d779000" strokeType="INSIDE" width="100.0" />
+      <Rectangle fx:id="noteF" arcHeight="5.0" arcWidth="5.0" fill="#46afe0e4" height="50.0" layoutX="450.0" stroke="#4d779000" strokeType="INSIDE" width="100.0" />
+   </children>
+</AnchorPane>

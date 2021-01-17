@@ -30,41 +30,41 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    /*
+        public void openListPage(ActionEvent event) {
+            try {
+                Parent root1 = FXMLLoader.load(getClass().getResource("../UI/MusicList.fxml"));
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(new Scene(root1));
+                window.show();
 
-    public void openListPage(ActionEvent event) {
-        try {
-            Parent root1 = FXMLLoader.load(getClass().getResource("../UI/MusicList.fxml"));
-            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window.setScene(new Scene(root1));
-            window.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-        } catch (IOException e) {
-            e.printStackTrace();
         }
 
-    }
+        public void openPlayPage(ActionEvent event) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../UI/play.fxml"));
+                AnchorPane pane = loader.load();
 
-   /* public void openPlayPage(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../UI/play.fxml"));
-            AnchorPane pane = loader.load();
+                    Stage gamePlay = new Stage();
+                    Scene scene = new Scene(pane);
+                    gamePlay.setScene(scene);
 
-                Stage gamePlay = new Stage();
-                Scene scene = new Scene(pane);
-                gamePlay.setScene(scene);
-
-                 PlayController controller = loader.getController();
-                 controller.setMusicInfo(musicTitle.getText(), artist.getText(), timePeriod.getText());
+                     PlayController controller = loader.getController();
+                     controller.setMusicInfo(musicTitle.getText(), artist.getText(), timePeriod.getText());
 
 
-                 gamePlay.show();
+                     gamePlay.show();
 
-        } catch (IOException e) {
-            e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
-
-    }
-*/
+    */
     public static void main(String[] args) {
 
         launch();

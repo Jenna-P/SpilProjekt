@@ -51,10 +51,9 @@ public class ListController {
 
             PlayController controller = loader.getController();
             controller.setMusicInfo(musicTitle.getText(), artist.getText(), timePeriod.getText());
-            controller.keyPressed();
-            controller.keyReleased();
+            //controller.keyPressed();
+            //controller.keyReleased();
             //controller.setNote();
-
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -81,7 +80,6 @@ public class ListController {
 
 */
     }
-
 
     public void selectTrack(int nowSelected) {
         if (songsAdded == 0) {

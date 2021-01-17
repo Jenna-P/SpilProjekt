@@ -108,7 +108,6 @@ public class PlayController implements Initializable {
         });
 
     }
-
 /*
     public void setNote() {
         Timeline timeline = new Timeline();
@@ -119,12 +118,13 @@ public class PlayController implements Initializable {
         timeline.getKeyFrames().add(kf);
         timeline.play();
 
-
     }
-
 */
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        keyPressed();
+        keyReleased();
 
     }
 }
