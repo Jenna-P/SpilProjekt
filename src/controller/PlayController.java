@@ -47,8 +47,13 @@ public class PlayController implements Initializable {
         }
        }
       public void dropNotes() {
-        // playMusicTitle(FXML text).getText 불러오질 못함.
-               
+        // playMusicTitle(FXML text).getText 불러오질 못함. 왜?
+          //if (playMusicTitle.getText().equal("Energy"))..
+
+          //whilef문 오류 나서 for문으로 바꿔 봤는데. 노트 세개가 잘 떨어 지긴 하는데.. 시간 차 없이 한꺼번에 떨어짐 *line61
+          //168째 줄 에 와일 문 써서 gameMusic.getTime 이 노래 끝나는 시간이랑 맞음 화면 변경하게끔 할려고 했는데 와일 문 동작을 먼저하고 게임 페이지가 열려요
+          //저번에 말씀 하셨던 그 문제 같은데 이걸 어떻게 해결 할 수 있을 지 도저히 모르겠어요..
+
                     beats.add(new Beat(1000, "Space"));
                     beats.add(new Beat(3000, "S"));
                     beats.add(new Beat(5000, "D"));
@@ -71,8 +76,6 @@ public class PlayController implements Initializable {
         period.setText(p);
 
     }
-
-
 
     @FXML
     public void keyPressed() {
@@ -159,10 +162,12 @@ public class PlayController implements Initializable {
 */
 
     public void playGameMusic() {
-        if (playMusicTitle.getText().equals("Energy")) {
+        if (playMusicTitle.getText().equals("Energy")) {              //이 메소드를 ListController playButton 메소드 안에
+                                                                      // controller.playGameMusic(); (라인58) 호출하니까 getText가 나오고 노래도 정상 작동되
             gameMusic = new Music("energy.mp3", false);
             gameMusic.start();
-            System.out.println(playMusicTitle.getText());
+
+
 
         } else if (playMusicTitle.getText().equals("Smile")) {
             gameMusic = new Music("smile.mp3", false);
