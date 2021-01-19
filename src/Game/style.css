@@ -15,3 +15,16 @@
     -fx-background-size:cover;
 
 }
+
+#completePane {
+    -fx-background-image: url("../Image/complete.png");
+    -fx-background-size:cover;
+
+}
+
+#cardPane {
+    -fx-background-image: url("../Image/card.png");
+    -fx-alignment: CENTER;
+    -fx-background-size:cover;
+
+}

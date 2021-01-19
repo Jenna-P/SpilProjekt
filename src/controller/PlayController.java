@@ -1,22 +1,16 @@
 package controller;
 
+import Game.Beat;
+import Game.Music;
 import Game.Note;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -33,87 +27,49 @@ public class PlayController implements Initializable {
     @FXML
     public AnchorPane pane = new AnchorPane();
 
+    public Music gameMusic;
 
-    public final int NOTE_SPEED = 5;
-    public final int SLEEP_TIME = 50;
+    ArrayList<Note> noteList = new ArrayList<Note>();
+    ArrayList<Beat> beats = new ArrayList<Beat>();
 
 
-    //ArrayList<Note> noteList = new ArrayList<Note>();
-    @FXML
-    Rectangle noteS, noteD, noteF;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        noteS.setVisible(false);
-        noteD.setVisible(false);
+       // Note note1 = new Note("S");
+      //  noteList.add(note1);
         dropNotes();
-        dropNotesD();
+
+        for (int j = 0; j < noteList.size(); j++) {
+            Note note = noteList.get(j);
+            pane.getChildren().add(note.getNote());
+            //note.start();
+        }
+       }
+      public void dropNotes() {
+        // playMusicTitle(FXML text).getText 불러오질 못함.
+               
+                    beats.add(new Beat(1000, "Space"));
+                    beats.add(new Beat(3000, "S"));
+                    beats.add(new Beat(5000, "D"));
+
+              for (int m = 0; m < beats.size(); m++) {
+                  if (beats.get(m).getTime() <= 170000) {  //대략 노래 끝나는 시간
+                      Note note = new Note(beats.get(m).getNoteName());
+                      note.start();
+                      noteList.add(note);
+
+                  }
+              }
 
 
-    }
-
+}
 
     public void setMusicInfo(String title, String s, String p) {
         playMusicTitle.setText(title);
         singer.setText(s);
         period.setText(p);
 
-    }
-
-    public void dropNotes() {
-    Thread t1 = new Thread(new Runnable() {
-
-        @Override
-        public void run() {
-            try {
-                Thread.sleep(1000);
-
-                while (true) {
-                    Platform.runLater(() -> {
-                        noteS.setVisible(true);
-                        noteS.setLayoutY(noteS.getLayoutY() + NOTE_SPEED);
-
-                    });
-
-                    Thread.sleep(SLEEP_TIME);
-                }
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-        }
-    });
-    t1.setDaemon(true);
-    t1.start();
-}
-
-    public void dropNotesD() {
-        Thread t1 = new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);
-
-                    while (true) {
-                        Platform.runLater(() -> {
-                            noteD.setVisible(true);
-                            noteD.setLayoutY(noteD.getLayoutY() + NOTE_SPEED);
-
-                        });
-
-                        Thread.sleep(SLEEP_TIME);
-                    }
-
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        });
-        t1.setDaemon(true);
-        t1.start();
     }
 
 
@@ -171,24 +127,11 @@ public class PlayController implements Initializable {
         });
 
     }
-/*
-    public void setNote() {
-        noteS.setVisible(true);
-        Timeline timeline = new Timeline();
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.setAutoReverse(false);
-        KeyValue kv = new KeyValue(noteS.yProperty(), 700);
-        KeyFrame kf = new KeyFrame(Duration.millis(3000), kv);
-        timeline.getKeyFrames().add(kf);
-        timeline.play();
 
-    }
-*/
 
-    public void judge() {
+/*    public void judge() {
         pane.getScene().addEventFilter(KeyEvent.KEY_PRESSED, event -> {
             if(event.getCode() == KeyCode.S && noteS.getLayoutY() >= 560 && noteS.getLayoutY() < 600) {
-                System.out.println("ss");
                 System.out.println("good");
             }
             if(event.getCode() == KeyCode.D) {
@@ -212,6 +155,25 @@ public class PlayController implements Initializable {
         });
 
     }
+
+*/
+
+    public void playGameMusic() {
+        if (playMusicTitle.getText().equals("Energy")) {
+            gameMusic = new Music("energy.mp3", false);
+            gameMusic.start();
+            System.out.println(playMusicTitle.getText());
+
+        } else if (playMusicTitle.getText().equals("Smile")) {
+            gameMusic = new Music("smile.mp3", false);
+            gameMusic.start();
+        } else if (playMusicTitle.getText().equals("Spotlight")) {
+            gameMusic = new Music("Spotlight.mp3", false);
+            gameMusic.start();
+        }
+    }
+
+
 
 
 

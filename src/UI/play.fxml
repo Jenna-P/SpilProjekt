@@ -66,8 +66,5 @@
             <Font name="Phosphate Inline" size="18.0" />
          </font>
       </Label>
-      <Rectangle fx:id="noteS" arcHeight="5.0" arcWidth="5.0" fill="#46afe0e4" height="50.0" layoutX="250.0" stroke="#4d779000" strokeType="INSIDE" width="100.0" />
-      <Rectangle fx:id="noteD" arcHeight="5.0" arcWidth="5.0" fill="#46afe0e4" height="50.0" layoutX="350.0" stroke="#4d779000" strokeType="INSIDE" width="100.0" />
-      <Rectangle fx:id="noteF" arcHeight="5.0" arcWidth="5.0" fill="#46afe0e4" height="50.0" layoutX="450.0" stroke="#4d779000" strokeType="INSIDE" width="100.0" />
    </children>
 </AnchorPane>

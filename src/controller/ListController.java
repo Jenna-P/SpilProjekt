@@ -1,20 +1,20 @@
 package controller;
 
+import Game.Main;
 import Game.Music;
 import Game.Track;
 import javafx.event.ActionEvent;
-import Game.Main;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -34,6 +34,7 @@ public class ListController {
     private Music gameMusic;
     private int nowSelected = 9999;
     private int songsAdded = 0;
+    public Music runningMusic;
 
 
     ArrayList<Track> trackList = new ArrayList<Track>();
@@ -41,6 +42,7 @@ public class ListController {
 
 
     public void playBtnHandle(ActionEvent event) {
+        selectedMusic.close();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../UI/play.fxml"));
             Parent root2 = loader.load();
@@ -53,33 +55,19 @@ public class ListController {
             controller.setMusicInfo(musicTitle.getText(), artist.getText(), timePeriod.getText());
             controller.keyPressed();
             controller.keyReleased();
-            controller.judge();
+            controller.playGameMusic();
+
+
+
+
 
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        onMusic();
 
 
-      /*  try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../UI/play.fxml"));
-            Parent root2 = loader.load();
-
-            PlayController controller = loader.getController();
-            controller.setMusicInfo(musicTitle.getText(), artist.getText(), timePeriod.getText());
-            play.getScene().setRoot(root2);
-            controller.keyPressed();
-            controller.keyReleased();
-            controller.setNote();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-*/
     }
 
     public void selectTrack(int nowSelected) {
@@ -139,29 +127,43 @@ public class ListController {
         }
     }
 
-    public void onMusic() {
-        if (musicTitle.getText().equals("Energy")) {
-            selectedMusic.close();
-            gameMusic = new Music("energy.mp3", false);
-            gameMusic.start();
+
+    public void openCompletePage(ActionEvent event) {
+        try {
+            Parent completeRoot = FXMLLoader.load(getClass().getResource("../UI/complete.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(completeRoot));
+            stage.show();
+
+            Thread.sleep(1000);
+            Parent cardRoot = FXMLLoader.load(getClass().getResource("../UI/card.fxml"));
+            Stage window1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window1.setScene(new Scene(cardRoot));
+            window1.show();
 
 
-        } else if (musicTitle.getText().equals("Smile")) {
-            selectedMusic.close();
-            gameMusic = new Music("smile.mp3", false);
-            gameMusic.start();
-        } else if (musicTitle.getText().equals("Spotlight")) {
-            selectedMusic.close();
-            gameMusic = new Music("Spotlight.mp3", false);
-            gameMusic.start();
-
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
     }
 
+    public void showComplete(){
+        Stage comStage = new Stage();
+        VBox v = new VBox();
+        ImageView iv = new ImageView();
+        Image image = new Image("Image/complete.png");
+        iv.setImage(image);
+        v.setAlignment(Pos.CENTER);
+        v.getChildren().add(iv);
 
+        Scene scene = new Scene(v, 1280, 720);
+        comStage.setScene(scene);
+        comStage.showAndWait();
 
-
+    }
 
 
 }
