@@ -66,6 +66,7 @@ public class Note extends Thread {
        note.setLayoutY(note.getLayoutY() + NOTE_SPEED);
    }
 
+    @Override
     public void run() {
         while(true) {
 

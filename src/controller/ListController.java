@@ -31,41 +31,30 @@ public class ListController {
     Button play;
 
     private Music selectedMusic;
-    private Music gameMusic;
+
     private int nowSelected = 9999;
     private int songsAdded = 0;
-    public Music runningMusic;
-
 
     ArrayList<Track> trackList = new ArrayList<Track>();
-
 
 
     public void playBtnHandle(ActionEvent event) {
         selectedMusic.close();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../UI/play.fxml"));
+            PlayController controller = new PlayController(musicTitle.getText());
+            loader.setController(controller);
             Parent root2 = loader.load();
-            Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root2);
 
-            window.setScene(new Scene(root2));
+
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            controller.setKeyEvent();
+            window.setScene(scene);
             window.show();
-
-            PlayController controller = loader.getController();
-            controller.setMusicInfo(musicTitle.getText(), artist.getText(), timePeriod.getText());
-            controller.keyPressed();
-            controller.keyReleased();
-            controller.playGameMusic();
-
-
-
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
 
     }
@@ -127,7 +116,7 @@ public class ListController {
         }
     }
 
-
+/*
     public void openCompletePage(ActionEvent event) {
         try {
             Parent completeRoot = FXMLLoader.load(getClass().getResource("../UI/complete.fxml"));
@@ -164,6 +153,6 @@ public class ListController {
         comStage.showAndWait();
 
     }
-
+*/
 
 }

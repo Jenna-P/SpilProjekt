@@ -5,7 +5,7 @@ public class Beat {
     private String noteName;
 
     public Beat(int time, String noteName) {
-        super(); // 왜 이걸 여기에??
+        super();
         this.time = time;
         this.noteName = noteName;
     }

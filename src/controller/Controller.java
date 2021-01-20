@@ -40,8 +40,6 @@ public class Controller implements Initializable {
     @FXML
     Image exitBtnImg = new Image("Image/exitBtn.png");
 
-   // Media intro;
-    //MediaPlayer mediaPlayer ;
 
     Music introMusic = new Music("circles.mp3", true);
 
