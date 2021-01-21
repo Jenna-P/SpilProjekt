@@ -5,7 +5,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="playPane" fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#keyPressed" onKeyReleased="#keyReleased" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../Game/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlayController">
+<AnchorPane id="playPane" fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../Game/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="250.0" stroke="#328bc2a7" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#deefff4d" height="720.0" layoutX="350.0" stroke="#328bc299" strokeType="INSIDE" strokeWidth="3.0" width="100.0" />

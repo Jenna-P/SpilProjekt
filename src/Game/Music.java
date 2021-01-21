@@ -33,8 +33,6 @@ public class Music extends Thread {
         return player.getPosition();
     }
 
-
-
     public void close() {
         isLoop = false;
         player.close();

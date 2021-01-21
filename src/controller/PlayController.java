@@ -31,9 +31,13 @@ public class PlayController implements Initializable {
 
     public Music gameMusic;
     String title;
+    String sText;
+    String pLabel;
 
-    public PlayController(String title) {
+    public PlayController(String title, String sText, String pLabel) {
         this.title = title;
+        this.sText = sText;
+        this.pLabel = pLabel;
     }
     public PlayController() {
 
@@ -43,7 +47,7 @@ public class PlayController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
     }
-
+/*
     public void setMusicInfo(String title, String s, String p) {
         playMusicTitle.setText(title);
         singer.setText(s);
@@ -51,7 +55,7 @@ public class PlayController implements Initializable {
 
     }
 
-
+*/
     public void setKeyEvent() {
         Scene scene = pane.getScene();
         scene.setOnKeyPressed((KeyEvent event)->{
@@ -101,6 +105,8 @@ public class PlayController implements Initializable {
             }
         });
        playMusicTitle.setText(this.title);
+       singer.setText(this.sText);
+       period.setText(this.pLabel);
        playGameMusic();
        Game game = new Game(title,gameMusic, pane);
        game.start();

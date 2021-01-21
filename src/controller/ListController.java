@@ -42,11 +42,10 @@ public class ListController {
         selectedMusic.close();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../UI/play.fxml"));
-            PlayController controller = new PlayController(musicTitle.getText());
+            PlayController controller = new PlayController(musicTitle.getText(), artist.getText(), timePeriod.getText());
             loader.setController(controller);
             Parent root2 = loader.load();
             Scene scene = new Scene(root2);
-
 
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             controller.setKeyEvent();
@@ -55,7 +54,6 @@ public class ListController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
     }
 
