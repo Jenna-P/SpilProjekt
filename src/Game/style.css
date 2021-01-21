@@ -23,14 +23,9 @@
 }
 
 #cardPane {
-    -fx-background-image: url("../Image/card.png");
+    -fx-background-image: url("../Image/Collect.png");
     -fx-alignment: CENTER;
     -fx-background-size:cover;
 
 }
 
-#sRoute {
-    -fx-background-image: url("../Image/nrBasic.png");
-    -fx-background-size:cover;
-
-}

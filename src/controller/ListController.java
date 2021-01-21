@@ -114,36 +114,5 @@ public class ListController {
         }
     }
 
-/*
-    public void openCompletePage(ActionEvent event) {
-        try {
-            Parent completeRoot = FXMLLoader.load(getClass().getResource("../UI/complete.fxml"));
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(completeRoot));
-            stage.show();
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-
-        }
-
-    }
-
-    public void showComplete(){
-        Stage comStage = new Stage();
-        VBox v = new VBox();
-        ImageView iv = new ImageView();
-        Image image = new Image("Image/complete.png");
-        iv.setImage(image);
-        v.setAlignment(Pos.CENTER);
-        v.getChildren().add(iv);
-
-        Scene scene = new Scene(v, 1280, 720);
-        comStage.setScene(scene);
-        comStage.showAndWait();
-
-    }
-*/
 
 }

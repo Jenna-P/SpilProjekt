@@ -20,7 +20,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import javax.imageio.plugins.tiff.TIFFImageReadParam;
 import java.net.URL;
 
 import java.util.ResourceBundle;
@@ -59,6 +58,7 @@ public class PlayController implements Initializable {
     String title;
     String sText;
     String pLabel;
+    Stage comStage = new Stage();
 
     public PlayController(String title, String sText, String pLabel) {
         this.title = title;
@@ -120,7 +120,7 @@ public class PlayController implements Initializable {
                 lRoute.setImage(noteRoute);
                 System.out.println("ll");
             }
-         
+
         });
         scene.setOnKeyReleased((KeyEvent event)->{
             if(event.getCode() == KeyCode.S) {
@@ -166,8 +166,8 @@ public class PlayController implements Initializable {
         if (playMusicTitle.getText().equals("Energy")) {
             gameMusic = new Music("energy.mp3", false);
             gameMusic.start();
-            showComplete(10);
-
+            showComplete(5);
+            showCard(6);
         } else if (playMusicTitle.getText().equals("Smile")) {
             gameMusic = new Music("smile.mp3", false);
             gameMusic.start();
@@ -179,11 +179,10 @@ public class PlayController implements Initializable {
         }
     }
     public void showComplete(int time) {
-
         Timeline timer = new Timeline(new KeyFrame(Duration.seconds(time), (ActionEvent event) -> {
             gameMusic.close();
             pane.getScene().getWindow().hide();
-            Stage comStage = new Stage();
+
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("../UI/complete.fxml"));
                 comStage.setScene(new Scene(root));
@@ -194,9 +193,34 @@ public class PlayController implements Initializable {
             }
 
         }));
-        timer.setCycleCount(Timeline.INDEFINITE);
+        timer.setCycleCount(1);
         timer.play();
+
 
     }
 
-}
+    public void showCard(int cardTime) {
+
+            Timeline timer = new Timeline(new KeyFrame(Duration.seconds(cardTime), (ActionEvent event) -> {
+                comStage.close();
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../UI/card.fxml"));
+                    Parent cardRoot = loader.load();
+                    comStage.setScene(new Scene(cardRoot));
+
+                    CardController cardCon = loader.getController();
+                    cardCon.popUpCard();
+                    comStage.setResizable(false);
+                    comStage.show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }));
+            timer.setCycleCount(1);
+            timer.play();
+
+        }
+
+
+    }
