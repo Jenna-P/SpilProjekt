@@ -11,11 +11,20 @@ public class Note extends Thread {
 
 
    public String noteType;
-    public final int NOTE_SPEED = 5;
+    public final int NOTE_SPEED = 4;
     public final int SLEEP_TIME = 10;
    public Rectangle note;
-    public int x, y = 580 - (1000 / SLEEP_TIME * NOTE_SPEED) ;
+    public int x, y ; // 580 - (1000 / SLEEP_TIME * NOTE_SPEED)
     public double width = 100;
+    public boolean proceeded = true;
+
+    public boolean isProceeded() {
+        return proceeded;
+    }
+
+    public void close() {
+        proceeded = false;
+    }
 
    public Note(String noteType) {
        if (noteType.equals("S")) {
@@ -81,6 +90,8 @@ public class Note extends Thread {
             }
 
         }
-
    }
+
+
+
 }

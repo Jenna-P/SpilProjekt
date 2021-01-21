@@ -28,3 +28,9 @@
     -fx-background-size:cover;
 
 }
+
+#sRoute {
+    -fx-background-image: url("../Image/nrBasic.png");
+    -fx-background-size:cover;
+
+}

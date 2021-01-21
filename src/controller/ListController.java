@@ -122,17 +122,10 @@ public class ListController {
             stage.setScene(new Scene(completeRoot));
             stage.show();
 
-            Thread.sleep(1000);
-            Parent cardRoot = FXMLLoader.load(getClass().getResource("../UI/card.fxml"));
-            Stage window1 = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            window1.setScene(new Scene(cardRoot));
-            window1.show();
-
 
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+
         }
 
     }
