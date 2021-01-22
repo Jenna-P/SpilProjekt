@@ -1,9 +1,11 @@
 package Game;
 
 import javafx.application.Platform;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Game extends Thread {
 
@@ -13,15 +15,26 @@ public class Game extends Thread {
      AnchorPane pane;
      String title;
      public Music gameMusic;
-     int gap = 125;
+     public ImageView ivJudge;
 
-     public Game(String title, Music gameMusic, AnchorPane pane) {
+     public Game(String title, Music gameMusic, AnchorPane pane, ImageView ivJudge) {
          this.gameMusic = gameMusic;
          this.title = title;
          this.pane = pane;
+         this.ivJudge = ivJudge;
+         String buttons[] = {"S", "D", "F", "Space", "J", "K", "L"};
          if (this.title.equals("Spotlight")) {
-             int startTime = 2000;
-             beats.add(new Beat(startTime, "Space"));
+             Random rand = new Random();
+             int startTime = 1000;
+             int baseTime = 100;
+             int speedTime = 5000;
+             while (startTime <= 30000) {
+                 int buttonType = rand.nextInt(buttons.length);
+                 beats.add(new Beat(startTime, buttons[buttonType]));
+                 startTime = startTime + baseTime + rand.nextInt(speedTime);
+             }
+            /*  int startTime = 2000;
+            beats.add(new Beat(startTime, "Space"));
              beats.add(new Beat(startTime + gap * 4, "D"));
              beats.add(new Beat(startTime + gap * 6, "F"));
              beats.add(new Beat(startTime + gap * 8, "Space"));
@@ -47,22 +60,12 @@ public class Game extends Thread {
              beats.add(new Beat(startTime + gap * 50, "K"));
              beats.add(new Beat(startTime + gap * 52, "L"));
              beats.add(new Beat(startTime + gap * 52, "J"));
-             beats.add(new Beat(startTime + gap * 52, "J"));
+             beats.add(new Beat(startTime + gap * 52, "J")); */
          }
          if (this.title.equals("Smile")) {
-             int startTime = 3000;
-             beats.add(new Beat(startTime, "Space"));
-             beats.add(new Beat(startTime + gap * 4, "D"));
-             beats.add(new Beat(startTime + gap * 6, "F"));
-             beats.add(new Beat(startTime + gap * 8, "Space"));
 
          }
          if (this.title.equals("Energy")) {
-             int startTime = 1000;
-             beats.add(new Beat(startTime, "Space"));
-             beats.add(new Beat(startTime + gap * 4, "D"));
-             beats.add(new Beat(startTime + gap * 6, "F"));
-             beats.add(new Beat(startTime + gap * 4, "J"));
 
          }
      }
@@ -71,7 +74,7 @@ public class Game extends Thread {
         int i = 0;
         while(beats.size()!=i) {
             if(beats.get(i).getTime() <= gameMusic.getTime()) {
-                Note note = new Note(beats.get(i).getNoteName());
+                Note note = new Note(beats.get(i).getNoteName(), ivJudge);
                 Platform.runLater(() -> {
                     pane.getChildren().add(note.getNote());
                 });
@@ -81,6 +84,17 @@ public class Game extends Thread {
             }
         }
     }
+
+ public void judge(String input) {
+     for (int i = 0 ; i < noteList.size(); i++) {
+         Note note = noteList.get(i);
+         if (input.equals(note.getNoteType())) {
+             note.judge();
+             break;
+         }
+     }
+
+ }
 
 
 

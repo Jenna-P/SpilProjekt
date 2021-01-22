@@ -52,13 +52,15 @@ public class PlayController implements Initializable {
     Image noteRoute = new Image("Image/noteRoute.png");
     @FXML
     Image sr = new Image("Image/spaceRoute.png");
-
+    @FXML
+    ImageView ivJudge;
 
     public Music gameMusic;
     String title;
     String sText;
     String pLabel;
     Stage comStage = new Stage();
+    public static Game game;
 
     public PlayController(String title, String sText, String pLabel) {
         this.title = title;
@@ -88,68 +90,70 @@ public class PlayController implements Initializable {
             if(event.getCode() == KeyCode.S){
                 sRoute.setVisible(true);
                 sRoute.setImage(noteRoute);
-                System.out.println("ss");
+                game.judge("S");
+
             }
             if(event.getCode() == KeyCode.D) {
                 dRoute.setVisible(true);
                 dRoute.setImage(noteRoute);
-                System.out.println("dd");
+               game.judge("D");
             }
             if(event.getCode() == KeyCode.F) {
                 fRoute.setVisible(true);
                 fRoute.setImage(noteRoute);
-                System.out.println("ff");
+                game.judge("F");
             }
             if(event.getCode() == KeyCode.SPACE) {
                 spaceRoute.setVisible(true);
                 spaceRoute.setImage(sr);
-                System.out.println("sp");
+                game.judge("Space");
+
             }
             if(event.getCode() == KeyCode.J) {
                 jRoute.setVisible(true);
                 jRoute.setImage(noteRoute);
-                System.out.println("jj");
+                game.judge("J");
             }
             if(event.getCode() == KeyCode.K) {
                 kRoute.setVisible(true);
                 kRoute.setImage(noteRoute);
-                System.out.println("kk");
+                game.judge("K");
             }
             if(event.getCode() == KeyCode.L) {
                 lRoute.setVisible(true);
                 lRoute.setImage(noteRoute);
-                System.out.println("ll");
+                game.judge("L");
             }
 
         });
         scene.setOnKeyReleased((KeyEvent event)->{
             if(event.getCode() == KeyCode.S) {
                 sRoute.setVisible(false);
-                System.out.println("s");
+
             }
             if(event.getCode() == KeyCode.D) {
                 dRoute.setVisible(false);
-                System.out.println("d");
+
             }
             if(event.getCode() == KeyCode.F) {
                 fRoute.setVisible(false);
-                System.out.println("f");
+
             }
             if(event.getCode() == KeyCode.SPACE) {
                 spaceRoute.setVisible(false);
-                System.out.println("space");
+
             }
             if(event.getCode() == KeyCode.J) {
                 jRoute.setVisible(false);
-                System.out.println("j");
+
             }
             if(event.getCode() == KeyCode.K) {
                 kRoute.setVisible(false);
-                System.out.println("k");
+
             }
             if(event.getCode() == KeyCode.L) {
                 lRoute.setVisible(false);
-                System.out.println("l");
+
             }
 
         });
@@ -157,7 +161,7 @@ public class PlayController implements Initializable {
        singer.setText(this.sText);
        period.setText(this.pLabel);
        playGameMusic();
-       Game game = new Game(title,gameMusic, pane);
+       this.game = new Game(title,gameMusic, pane, ivJudge);
        game.start();
 
     }
@@ -175,7 +179,8 @@ public class PlayController implements Initializable {
         } else if (playMusicTitle.getText().equals("Spotlight")) {
             gameMusic = new Music("Spotlight.mp3", false);
             gameMusic.start();
-            showComplete(20);
+            showComplete(30);
+            showCard(31);
         }
     }
     public void showComplete(int time) {
@@ -221,6 +226,5 @@ public class PlayController implements Initializable {
             timer.play();
 
         }
-
 
     }
