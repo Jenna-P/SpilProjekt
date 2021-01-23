@@ -170,8 +170,8 @@ public class PlayController implements Initializable {
         if (playMusicTitle.getText().equals("Energy")) {
             gameMusic = new Music("energy.mp3", false);
             gameMusic.start();
-            showComplete(5);
-            showCard(6);
+            showComplete(10);
+            showCard(11);
         } else if (playMusicTitle.getText().equals("Smile")) {
             gameMusic = new Music("smile.mp3", false);
             gameMusic.start();
@@ -179,8 +179,13 @@ public class PlayController implements Initializable {
         } else if (playMusicTitle.getText().equals("Spotlight")) {
             gameMusic = new Music("Spotlight.mp3", false);
             gameMusic.start();
-            showComplete(30);
-            showCard(31);
+            showComplete(214);
+            showCard(215);
+        } else if (playMusicTitle.getText().equals("Disco")) {
+            gameMusic = new Music("test70.mp3", false);
+            gameMusic.start();
+            showComplete(38);
+            showCard(39);
         }
     }
     public void showComplete(int time) {

@@ -45,16 +45,6 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //Users/jennapetersen/IdeaProjects/SpilProjekt/src/Audio/finish.wav
-        //String path = new File("/Users/jennapetersen/IdeaProjects/SpilProjekt/src/Audio/finish.wav").getAbsolutePath();
-        //intro = new Media("//Users//jennapetersen//IdeaProjects//SpilProjekt//src//Audio//finish.wav");
-        //Media intro = new Media(path);
-        //mediaPlayer = new MediaPlayer(intro);
-        //mediaPlayer.setAutoPlay(true);
-        //File f = new File("src/Audio/finish.wav");
-        //Media m = new Media(f.toURI().toString());
-        //MediaPlayer mp = new MediaPlayer(m);
-        //MediaView mv = new MediaView(mp);
         imageViewStartBtn.setImage(startBtnImg);
         imageViewExitBtn.setImage(exitBtnImg);
         introMusic.start();

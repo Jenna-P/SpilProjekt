@@ -62,6 +62,7 @@ public class ListController {
         trackList.add(new Track("Energy", "Bensound", "90's", "energyList.mp3"));
         trackList.add(new Track("Smile", "Joakim Karud", "00's", "smileList.mp3"));
         trackList.add(new Track("Spotlight", "Deflo & Liam Tylor", "10's", "SpotlightList.mp3"));
+        trackList.add(new Track("Disco", "Test", "70's", "test70.mp3"));
         songsAdded = 1;
         }
 

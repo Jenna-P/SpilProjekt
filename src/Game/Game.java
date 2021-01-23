@@ -27,8 +27,8 @@ public class Game extends Thread {
              Random rand = new Random();
              int startTime = 1000;
              int baseTime = 100;
-             int speedTime = 5000;
-             while (startTime <= 30000) {
+             int speedTime = 1000;
+             while (startTime <= 213000) {
                  int buttonType = rand.nextInt(buttons.length);
                  beats.add(new Beat(startTime, buttons[buttonType]));
                  startTime = startTime + baseTime + rand.nextInt(speedTime);
@@ -62,13 +62,27 @@ public class Game extends Thread {
              beats.add(new Beat(startTime + gap * 52, "J"));
              beats.add(new Beat(startTime + gap * 52, "J")); */
          }
-         if (this.title.equals("Smile")) {
+         else if (this.title.equals("Smile")) {
 
          }
-         if (this.title.equals("Energy")) {
+         else if (this.title.equals("Energy")) {
 
+         }
+         else if (this.title.equals("Disco")) {
+             Random rand = new Random();
+             int startTime = 500;
+             int baseTime = 100;
+             int speedTime = 1000;
+             while (startTime <= 36000) {
+                 int buttonType = rand.nextInt(buttons.length);
+                 beats.add(new Beat(startTime, buttons[buttonType]));
+                 startTime = startTime + baseTime + rand.nextInt(speedTime);
+
+             }
          }
      }
+
+
     @Override
     public void run() {
         int i = 0;

@@ -1,6 +1,6 @@
 package Game;
 
-import controller.PlayController;
+
 import javafx.application.Platform;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
