@@ -27,9 +27,11 @@ import java.util.ResourceBundle;
 public class PlayController implements Initializable {
 
     @FXML
-    Text playMusicTitle, singer;
+   Text playMusicTitle;
     @FXML
-    Label period;
+    Text singer;
+    @FXML
+    public static Label period = new Label();
     @FXML
     Label s, d, f, space, j, k, l;
     @FXML
@@ -170,7 +172,7 @@ public class PlayController implements Initializable {
         if (playMusicTitle.getText().equals("Energy")) {
             gameMusic = new Music("energy.mp3", false);
             gameMusic.start();
-            showComplete(10);
+            showComplete(10); //time should change to song durations
             showCard(11);
         } else if (playMusicTitle.getText().equals("Smile")) {
             gameMusic = new Music("smile.mp3", false);

@@ -66,6 +66,17 @@ public class Game extends Thread {
 
          }
          else if (this.title.equals("Energy")) {
+             Random rand = new Random();
+             int startTime = 500;
+             int baseTime = 100;
+             int speedTime = 1500;
+             while (startTime <= 40000) {
+                 int buttonType = rand.nextInt(buttons.length);
+                 beats.add(new Beat(startTime, buttons[buttonType]));
+                 startTime = startTime + baseTime + rand.nextInt(speedTime);
+
+             }
+             
 
          }
          else if (this.title.equals("Disco")) {
