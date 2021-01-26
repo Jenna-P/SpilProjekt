@@ -13,7 +13,7 @@ public class CardController {
     @FXML
     ImageView iv = new ImageView();
     @FXML
-    Image card90 = new Image("Image/card90.png");
+    Image card70 = new Image("Image/card7.png");
 
     public void handleCollect() {
 
@@ -21,7 +21,7 @@ public class CardController {
     }
 
     public void popUpCard() {
-        iv.setImage(card90);
+        iv.setImage(card70);
         FadeTransition fade = new FadeTransition(Duration.seconds(1), iv);
         fade.setFromValue(0.0);
         fade.setToValue(1.0);

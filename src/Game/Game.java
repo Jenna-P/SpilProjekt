@@ -27,7 +27,7 @@ public class Game extends Thread {
              Random rand = new Random();
              int startTime = 1000;
              int baseTime = 100;
-             int speedTime = 1000;
+             int speedTime = 1500;
              while (startTime <= 213000) {
                  int buttonType = rand.nextInt(buttons.length);
                  beats.add(new Beat(startTime, buttons[buttonType]));
@@ -73,7 +73,7 @@ public class Game extends Thread {
              int startTime = 500;
              int baseTime = 100;
              int speedTime = 1000;
-             while (startTime <= 36000) {
+             while (startTime <= 37000) {
                  int buttonType = rand.nextInt(buttons.length);
                  beats.add(new Beat(startTime, buttons[buttonType]));
                  startTime = startTime + baseTime + rand.nextInt(speedTime);
